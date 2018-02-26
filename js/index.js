@@ -4,35 +4,10 @@
   var word  = document.getElementById("inputname");
   var div1 = document.getElementById('initpage'),
   div2 = document.getElementById('gamecontainer');
-
-  const bushes = document.querySelectorAll('.bush');
-  var scoreBoard = document.querySelector('.score');
-  const finished = document.querySelector('.final');
-  const grims = document.querySelectorAll('.grim');
-
-  var start = document.getElementById('startGame');
-  start.addEventListener('click', startGame);
-  var stop = document.getElementById('stopGame');
-  stop.addEventListener('click', stopGame);
-  var 
+  
 
 
   var nameDisplay = "";
-
-
-		function randomTime(min, max) {
-			return Math.round(Math.random() * (max - min) + min);
-		} 
-
-		function randomBush(bushes){
-			const idx = Math.floor(Math.random() * bushes.length);
-
-			const bush = bushes[idx];
-			if(bush === lastHole){
-				return randomHole(holes);
-			}
-			lastHBush = bush;
-		}
 
 
 function switchVisible() {
