@@ -28,6 +28,10 @@
 			const idx = Math.floor(Math.random() * bushes.length);
 
 			const bush = bushes[idx];
+			if(bush === lastHole){
+				return randomHole(holes);
+			}
+			lastHBush = bush;
 		}
 
 
