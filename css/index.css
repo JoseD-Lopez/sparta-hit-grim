@@ -1,0 +1,28 @@
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+.initpage-container{
+	    margin: 10% auto;
+}
+html{
+	box-sizing: border-box;
+	font-size: 10px;
+}
+body{
+	padding: 0;
+	margin:0;
+	font-family: 'Fredericka the Great', cursive;
+    background: orangered;
+ }
+h1{
+	text-align: center;
+	font-size: 10rem;
+	line-height: 1;
+	margin-bottom: 0;
+}
+label{
+	font-size: 40px;
+}
+.name-input{
+	text-align: center;
+}
