@@ -5,8 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-   <div class="initpage-container">
-	
+   <div id="initpage">
 	<h1>Spartan Hit the Grim!</h1>
 	<div class="name-input">
 		 <p class="entername">Enter your name</p>
@@ -14,11 +13,44 @@
          <input type="text" id="uname" name="name">
 		<input type="submit" name="Submit">
      </form>
-
      </div>
-
 	</div>
 
+		<div id="gamecontainer">
+	  
+	  <div class="headscore">
+		  <h1 class="heading">Bash Grim!</h1>
+	    <div class="score"></div>
+	</div>
+	<button onclick="startGame()">Start Game</button>
+	<button onclick="stopGame()">Stop Game</button>
+	
+	<div class="final"></div>
+
+	<div class="game">
+		<div class="bush">
+			<div class="grim"></div>
+		</div>
+		<div class="bush">
+			<div class="grim"></div>
+		</div>
+		<div class="bush">
+			<div class="grim"></div>
+		</div>
+		<div class="bush">
+			<div class="grim"></div>
+		</div>
+		<div class="bush">
+			<div class="grim"></div>
+		</div>
+		<div class="bush">
+			<div class="grim"></div>
+		</div>
+	</div>
+
+	<button onclick="stopMusic()">Mute Sound</button>
+</div>
+<input id="Button1" type="button" value="Click me" />
 
 	<script type="text/javascript" src="js/index.js">
 		
