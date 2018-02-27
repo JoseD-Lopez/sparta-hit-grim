@@ -3,32 +3,40 @@
 <head>
 	<title>Spartan Hit Grim!</title>
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Indie+Flower|Josefin+Slab|Open+Sans+Condensed:300|Oswald" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/index2.css">
 </head>
 <body>
-   <div id="initpage">
+   <div id="initpage">	
    	<h1 id="results"></h1>
 	<h1>Spartan Hit the Grim!</h1>
-	<div class="name-input">
-		 <p class="penetername">Enter your name and then click enter:</p>
-         <form autocomplete="off" name="matchform" class="wordform">
+   	<div class="gameboard1">
+   
+
+	<div class="name-input">  
+		<form autocomplete="off" name="matchform" class="wordform">
          <input type="text" id="inputname" name="name">
-		<input type="submit" name="Submit">
+		<input id="sub-buttn" type="submit" name="Submit">
      </form>
+		 <p class="penetername">Enter ur name so the grim knows who you are..:</p>
      </div>
-     <input id="Button1" type="button" value="Enter" />
+</div>
+     <div id="gamepanel-one">
+      
+     <button id="Button1">Enter to Play</button>
+     <button id="stopMusic1">Mute Music</button>
+    </div>
 	</div>
 
 		<div id="gamecontainer">
-	  
-	  <div class="headscore">
-
+			<h2 id="results2"></h2>
 		  <h1 id="heading">Bash Grim!</h1>
+	  <div class="gameboard">
+	  <div class="headscore">
+	  	  
 		  <h1 id="headingResult"></h1>
-		  <h2 id="results2"></h2>
-	    <div class="score"></div>
-	   
+	    <div class="score"></div>  
 	</div>
 
 	<div class="game">
@@ -57,10 +65,19 @@
 			<div class="kitty"></div>
 		</div>
 	</div>
+	</div>
+	<div id="gamepanel">
 	<button id="startGame">Start Game</button>
-	<button id="stopGame" ">Stop Game</button>
-	<button id="ResButn" ">Show results</button>
+	<button id="stopGame">Stop Game</button>
+	<button id="stopMusic">Mute Music</button>
+	<button id="Button2">Back to Entry</button>
+	</div>
 </div>
+
+<video id="myVideo" autoplay loop>
+  <source src="media/udon.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/index2.js"></script>

@@ -24,19 +24,27 @@ function switchVisible() {
 document.getElementById('Button1').addEventListener('click', switchVisible);
 
 function switchVisibleHeading() {
-  if(!initpage) return;
+
   if (getComputedStyle(hnd1).display == 'block') {
     heading.style.display = 'none';
     headingResult.style.display = 'block';
     nameScore();
   } else {
-    // initpage.style.display = 'block';
-    // gamecontainer.style.display = 'none';
+
   }
 }
+document.getElementById('Button2').addEventListener('click', switchVisible2);
 
-document.getElementById('ResButn').addEventListener('click', switchVisibleHeading);
-
+function switchVisible2() {
+  if(!initpage) return;
+  if (getComputedStyle(div1).display == 'block') {
+    initpage.style.display = 'none';
+    gamecontainer.style.display = 'block';
+  } else {
+    initpage.style.display = 'block';
+    gamecontainer.style.display = 'none';
+  }
+}
 
 document.querySelector('form.wordform').addEventListener("submit", function(event){
    event.preventDefault();
@@ -55,7 +63,7 @@ function sendname(message){
 
 function sendname2(message){
 
-	myh2.innerHTML='Attack ' + message + '!';
+	myh2.innerHTML='Start! ' + 'Attack ' + message + '!';
   
 }
 

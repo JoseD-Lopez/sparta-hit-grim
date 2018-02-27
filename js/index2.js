@@ -5,19 +5,23 @@
 		const finished = document.querySelector('.final');
 		const grims = document.querySelectorAll('.grim');
 		const kittys = document.querySelectorAll('.kitty');
-		var vid = document.getElementById("myVideo");
-	
+		
+		var vidMut = document.getElementById("stopMusic");
+		vidMut.addEventListener('click', stopMusicPl);
+  		var vidMut = document.getElementById("stopMusic1");
+		vidMut.addEventListener('click', stopMusicPl);
+
   		var start = document.getElementById('startGame');
   		start.addEventListener('click', startGame);
+  		
   		var stop = document.getElementById('stopGame');
   		stop.addEventListener('click', stopGame);
+
 
 		let lastBush;
 		let timeup = false;
 		let score = 0;
-		let nameScoreArray = [];
 
-		
 
 		function randomTime(min, max) {
 			return Math.round(Math.random() * (max - min) + min);
@@ -35,20 +39,26 @@
 			return bush;
 		}
 
-		function stopMusic(){
+		function stopMusicPl(){
+			var vid = document.getElementById("myVideo");
 			vid.muted = true;
 		}
-	
+		
      
 		function startGame(){
 			scoreBoard.textContent = 0;
 			timeup = false;
 			score = 0;
 			peep();
-			peep2();
+			peep2();	
 			setTimeout(() => timeup = true, 10000);
+			if(score != 0){
+				startGame();
+			}
 			
 		}
+
+
 		function stopGame(){
 			timeup = true;
 		}
@@ -77,7 +87,6 @@
 			
 			const time = randomTime(20, 2000);
 			var bush = randomBush(bushes); 
-
 			bush.classList.add('up2');
 
 			setTimeout(() => {
@@ -95,8 +104,6 @@
 			scoreBoard.textContent = score;
 		}
 
-this.removeEventListener('click', hit);
-		
 		grims.forEach(grim => grim.addEventListener('click', hit));
 
 		function hit2(e){
@@ -104,24 +111,24 @@ this.removeEventListener('click', hit);
 			score--;
 			scoreBoard.textContent = score;
 		}
+
 		kittys.forEach(kitty => kitty.addEventListener('click', hit2));
+
 
 
 		function nameScore(){
 			
-		// nameScoreArray = nameDisplay + " " + score;
 		switchVisibleHeading();
 
-		if(score < 0){
-			rslt2.innerHTML= nameDisplay + ': ' + 'You killed a kitty ' + 'Your score : ' + score + '!';
+		if(score <= 0){
+			rslt2.innerHTML= nameDisplay + ': ' + 'Do you like kitties? ' + 'Your score : ' + score + '!';
 		}
-		else if(score <= 3){
+		else if(score > 0 && score <= 3){
 			rslt2.innerHTML= nameDisplay + ': ' + 'No no you still have to practice! '+ 'Your score : ' + score + '!';
 		}
-		else if(socre <= 5){
-			rslt2.innerHTML= nameDisplay + ': ' + 'You are mastering the martial art!'+'Your score : ' + score + '!';
+		else if(score > 3){
+			rslt2.innerHTML= nameDisplay + ': ' + 'You are mastering the martial art! '+'Your score : ' + score + '!';
 		}
-		console.log(nameScoreArray);
 			
 		}
 

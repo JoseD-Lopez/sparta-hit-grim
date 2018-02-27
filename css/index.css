@@ -1,9 +1,7 @@
 *, *:before, *:after{
 	box-sizing: inherit;
 }
-#initpage{
-	    margin: 10% auto;
-}
+
 html{
 	box-sizing: border-box;
 	font-size: 10px;
@@ -12,40 +10,113 @@ body{
 	padding: 0;
 	margin:0;
 	font-family: 'Fredericka the Great', cursive;
-    background: orangered;
  }
+
+button{
+	margin-right: 9%;
+    margin-left: 7%;
+    width: 8%;
+    font-size: 19px;
+    height: 5%;
+}
 h1{
 	text-align: center;
-	font-size: 10rem;
+	font-size: 8rem;
 	line-height: 1;
 	margin-bottom: 0;
 }
+h2{
+	font-size: 50px;
+    margin-bottom: 0;
+    margin-left: 29%;
+    margin-top: 6%;
+}
 label{
 	font-size: 40px;
+}
+#initpage{
+	     margin: 10% auto;
+         width: 80%;
+         height: 530px;
+	    animation: animatedfrontBackground 9s linear infinite;
+}
+.gameboard{
+	border: 20px groove #e3e3e3;
+
+}
+.gameboard1{
+	border: 20px groove #e3e3e3;
+	height: 403px;
+}
+  @keyframes animatedfrontBackground{
+ 
+    0% { 
+    background:url(../media/drawn-contrast.jpg) bottom center;
+  }
+
+  100% {
+    background:url(../media/dawn_drama.png) bottom center;
+  }
+
 }
 .name-input{
 	text-align: center;
 }
 .penetername{
-	font-size: 27px;
+	font-size: 7rem;
+	margin: 3%;
+}
+#Button1{
+	margin-right: 9%;
+    margin-left: 22%;
+    width: 8%;
+    font-size: 19px;
+    height: 5%;
+}
+#stopMusic1{
+	margin-right: 9%;
+    margin-left: 22%;
+    width: 8%;
+    font-size: 19px;
+    height: 5%;	
 }
 #inputname{
-	width: 20%;
+	margin-top: 2%;
+	font-size: 27px;
+	width: 32%;
+    height: 37px;
+    border-radius: 9px;
+    font-family: 'Fredericka the Great', cursive;
 }
 #results{
 	text-align: center;
     margin: 3%;
     font-size: 22px;
 }
-#Button1{
-	 width: 10%;
+/*#Button1{
+	width: 10%;
     margin-left: 44%;
-}
+    margin-top: 2%;
+    font-size: 16px;
+}*/
 #displayname{
 	text-align: center;
     margin: 3%;
     font-size: 22px;
 }
-#ßheadingResult{
+#headingResult{
 	display: none;
+}
+#gamepanel{
+	background: brown;
+	opacity: 0.5;
+    /*margin-top: 3%;*/
+}
+#gamepanel-one{
+    background: brown;
+    opacity: 0.6;
+}
+#sub-buttn{
+	 width: 8%;
+    font-size: 33px;
 }

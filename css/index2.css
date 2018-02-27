@@ -3,6 +3,19 @@
 }
 #gamecontainer{
 	    margin: 10% auto;
+	    width: 75%;
+	    animation: animatedBackground 9s linear infinite;
+}
+ @keyframes animatedBackground{
+ 
+    0% { 
+    background:url(../media/total_drama.jpg) bottom center;
+  }
+
+  100% {
+    background:url(../media/dawn_drama.png) bottom center;
+  }
+
 }
 .headscore{
 	clear:both;
@@ -71,4 +84,7 @@
 }
 .bush.up2 .kitty{
 	top:0;
+}
+video{
+	display: none;
 }
