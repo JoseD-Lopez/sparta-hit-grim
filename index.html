@@ -12,19 +12,20 @@
 	<h1>Spartan Hit the Grim!</h1>
 	<div class="name-input">
 		 <p class="penetername">Enter your name and then click enter:</p>
-         <form name="matchform" class="wordform">
+         <form autocomplete="off" name="matchform" class="wordform">
          <input type="text" id="inputname" name="name">
 		<input type="submit" name="Submit">
      </form>
      </div>
-     
+     <input id="Button1" type="button" value="Enter" />
 	</div>
 
 		<div id="gamecontainer">
 	  
 	  <div class="headscore">
 
-		  <h1 class="heading">Bash Grim!</h1>
+		  <h1 id="heading">Bash Grim!</h1>
+		  <h1 id="headingResult"></h1>
 		  <h2 id="results2"></h2>
 	    <div class="score"></div>
 	   
@@ -33,28 +34,33 @@
 	<div class="game">
 		<div class="bush">
 			<div class="grim"></div>
+			<div class="kitty"></div>
 		</div>
 		<div class="bush">
 			<div class="grim"></div>
+			<div class="kitty"></div>
 		</div>
 		<div class="bush">
 			<div class="grim"></div>
+			<div class="kitty"></div>
 		</div>
 		<div class="bush">
 			<div class="grim"></div>
+			<div class="kitty"></div>
 		</div>
 		<div class="bush">
 			<div class="grim"></div>
+			<div class="kitty"></div>
 		</div>
 		<div class="bush">
 			<div class="grim"></div>
+			<div class="kitty"></div>
 		</div>
 	</div>
 	<button id="startGame">Start Game</button>
 	<button id="stopGame" ">Stop Game</button>
+	<button id="ResButn" ">Show results</button>
 </div>
-<p>Otherwise just enter</p>
-<input id="Button1" type="button" value="Enter" />
 
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/index2.js"></script>

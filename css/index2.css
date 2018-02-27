@@ -7,7 +7,7 @@
 .headscore{
 	clear:both;
 }
-.heading{
+#heading{
 	float: left;
 	margin-left: 27%;
 }
@@ -56,7 +56,19 @@
  height: 100%;
  transition: all 0.4s;
 }
+.kitty{
+ background:url(../media/handsupkitty.png) bottom center no-repeat;
+ background-size: 40%;
+ position: absolute;
+ top: 100%;
+ width: 100%;
+ height: 100%;
+ transition: all 0.4s;
+}
 
 .bush.up .grim{
+	top:0;
+}
+.bush.up2 .kitty{
 	top:0;
 }
