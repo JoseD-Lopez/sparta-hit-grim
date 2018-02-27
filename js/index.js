@@ -44,6 +44,7 @@ document.querySelector('form.wordform').addEventListener("submit", function(even
    sendname(nameDisplay);
    sendname2(nameDisplay);
    word.value="";
+   switchVisible();
 		 });
 
 

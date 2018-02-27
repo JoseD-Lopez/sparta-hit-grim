@@ -109,11 +109,18 @@ this.removeEventListener('click', hit);
 
 		function nameScore(){
 			
-		nameScoreArray = nameDisplay + " " + score;
+		// nameScoreArray = nameDisplay + " " + score;
 		switchVisibleHeading();
 
-		rslt2.innerHTML='Your Score is:' + nameScoreArray + '!';
-
+		if(score < 0){
+			rslt2.innerHTML= nameDisplay + ': ' + 'You killed a kitty ' + 'Your score : ' + score + '!';
+		}
+		else if(score <= 3){
+			rslt2.innerHTML= nameDisplay + ': ' + 'No no you still have to practice! '+ 'Your score : ' + score + '!';
+		}
+		else if(socre <= 5){
+			rslt2.innerHTML= nameDisplay + ': ' + 'You are mastering the martial art!'+'Your score : ' + score + '!';
+		}
 		console.log(nameScoreArray);
 			
 		}
