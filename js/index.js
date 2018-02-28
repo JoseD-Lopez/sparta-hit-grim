@@ -43,7 +43,13 @@ function switchVisible2() {
   } else {
     initpage.style.display = 'block';
     gamecontainer.style.display = 'none';
+    sendname3();
   }
+}
+
+function sendname3(message){
+
+	myh3.innerHTML='';
 }
 
 document.querySelector('form.wordform').addEventListener("submit", function(event){

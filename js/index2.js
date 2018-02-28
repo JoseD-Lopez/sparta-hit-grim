@@ -42,6 +42,9 @@
 		function stopMusicPl(){
 			var vid = document.getElementById("myVideo");
 			vid.muted = true;
+
+			var vid2 = document.getElementById("myVideo2");
+			vid2.muted = true;
 		}
 		
      
