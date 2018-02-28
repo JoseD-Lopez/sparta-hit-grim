@@ -5,6 +5,20 @@
 html{
 	box-sizing: border-box;
 	font-size: 10px;
+	background: blue;
+  	animation: color-me-in 5s infinite;
+}
+
+@keyframes color-me-in {
+  	0% {
+    background: orange;
+  	}
+  	50% {
+    background: blue;
+  	}
+  	100% {
+    background: black;
+  	}
 }
 body{
 	padding: 0;
@@ -35,10 +49,10 @@ label{
 	font-size: 40px;
 }
 #initpage{
-	     margin: 10% auto;
-         width: 80%;
-         height: 530px;
-	    animation: animatedfrontBackground 9s linear infinite;
+	margin: 10% auto;
+    width: 80%;
+    height: 530px;
+	animation: animatedfrontBackground 9s linear infinite;
 }
 .gameboard{
 	border: 20px groove #e3e3e3;
@@ -48,37 +62,49 @@ label{
 	border: 20px groove #e3e3e3;
 	height: 403px;
 }
-  @keyframes animatedfrontBackground{
- 
+@keyframes animatedfrontBackground{
     0% { 
     background:url(../media/drawn-contrast.jpg) bottom center;
-  }
+    }
 
-  100% {
+  	100% {
     background:url(../media/dawn_drama.png) bottom center;
   }
-
 }
 .name-input{
 	text-align: center;
 }
-.penetername{
+#penetername{
 	font-size: 7rem;
+	margin: 3%;
+}
+#instructions{
+	display: none;
+}
+#instructions{
+	font-size: 3rem;
 	margin: 3%;
 }
 #Button1{
 	margin-right: 9%;
-    margin-left: 22%;
+    margin-left: 15%;
     width: 8%;
     font-size: 19px;
     height: 5%;
 }
 #stopMusic1{
 	margin-right: 9%;
-    margin-left: 22%;
+    margin-left: 15%;
     width: 8%;
     font-size: 19px;
     height: 5%;	
+}
+#instructToggle{
+	margin-right: 9%;
+    margin-left: 10%;
+    width: 13%;
+    font-size: 19px;
+    height: 5%;
 }
 #inputname{
 	margin-top: 2%;
