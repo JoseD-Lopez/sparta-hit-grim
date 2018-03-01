@@ -28,10 +28,13 @@
 	var getScreamSound = document.getElementById('screamAudio');
 	getScreamSound.addEventListener('click', playScreamSound);
 
+	var getBombSound = document.getElementById('tickingTimeBombAudio');
+	getBombSound.addEventListener('click', playBombSound);
+
 	var lastBush;
 	var timeup = false;
 	var score = 0;
-	var timerTime = 20000;
+	var timerTime = 15000;
 
 
 
@@ -50,6 +53,10 @@
  function playScreamSound() {
  
           getScreamSound.play();
+      }
+function playBombSound() {
+ 
+          getBombSound.play();
       }
 
 	function randomTime(min, max) {
@@ -100,7 +107,7 @@
 	if (seconds < 0) {
   		var temp = document.getElementById('countdown');
   		temp.innerHTML = "all done, bye bye"; 
-  		temp.innerHTML = 21;      	
+  		temp.innerHTML = 16;      	
   		return;
 	}
 	seconds--;
@@ -115,7 +122,7 @@
 	}
 
 	function peep(){
-		var time = randomTime(20, 1500);
+		var time = randomTime(20, 1600);
 		var bush = randomBush(bushes); 
 		bush.classList.add('up');
 		setTimeout(() => {
@@ -135,10 +142,11 @@
 		bush.classList.add('up2');
 		setTimeout(() => {
 			bush.classList.remove('up2');
-			if(!timeup) peep2();
+			if(!timeup) {
+				peep2();
+			}
 		}, time);
 	}
-
 
 	function hit(e){
 		if(!e.isTrusted) 
@@ -148,10 +156,10 @@
 		playSound();
 		playScreamSound();
 		playDemonSound();
+
 	}
 	grims.forEach(grim => grim.addEventListener('click', hit));	
-
-   
+ 
 	function hit2(e){
 		if(!e.isTrusted) return;
 		score--;
@@ -165,13 +173,13 @@
 		switchVisibleHeading();
 
 		if(score <= 0){
-			rslt2.innerHTML= nameDisplay + ': ' + 'Do you like kitties? ' + 'Your score : ' + score + '!';
+			rslt2.innerHTML= nameDisplay + ': ' + 'The Innocent kittys ' + 'Your score : ' + score + '!';
 		}
-		else if(score > 0 && score <= 3){
-			rslt2.innerHTML= nameDisplay + ': ' + 'No no you still have to practice! '+ 'Your score : ' + score + '!';
+		else if(score > 0 && score <= 5){
+			rslt2.innerHTML= nameDisplay + ': ' + 'No no no! practice! '+ 'Your score : ' + score + '!';
 		}
-		else if(score > 3){
-			rslt2.innerHTML= nameDisplay + ': ' + 'You are mastering the martial art! '+'Your score : ' + score + '!';
+		else if(score > 5){
+			rslt2.innerHTML= nameDisplay + ': ' + 'Kickass! '+'Your score : ' + score + '!';
 		}	
 	}
 

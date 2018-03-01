@@ -29,7 +29,7 @@
 	  if (getComputedStyle(div1).display == 'block') {
 	    initpage.style.display = 'none';
 	    gamecontainer.style.display = 'block';
-	    playSound();
+	    playBombSound()
 	  } else {
 	    initpage.style.display = 'block';
 	    gamecontainer.style.display = 'none';
