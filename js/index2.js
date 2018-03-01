@@ -74,8 +74,6 @@ function playBombSound() {
 	}
 
 	function stopMusicPl(){
-		var vid = document.getElementById("myVideo");
-		vid.muted = true;
 
 		var vid2 = document.getElementById("myVideo2");
 		vid2.muted = true;
@@ -122,7 +120,7 @@ function playBombSound() {
 	}
 
 	function peep(){
-		var time = randomTime(20, 1600);
+		var time = randomTime(20, 1400);
 		var bush = randomBush(bushes); 
 		bush.classList.add('up');
 		setTimeout(() => {
