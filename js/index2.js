@@ -182,14 +182,14 @@ function playBombSound() {
 	function nameScore(){	
 		switchVisibleHeading();
 
-		if(score <= 0){
-			rslt2.innerHTML= nameDisplay + ': ' + 'The Innocent kittys ' + 'Your score : ' + score + '!';
+		if(score < 0){
+			rslt2.innerHTML= nameDisplay + ': ' + 'Oh no the Innocent kittys ' + 'Your score : ' + score + '!';
 		}
 		else if(score > 0 && score <= 5){
-			rslt2.innerHTML= nameDisplay + ': ' + 'No no no! practice! '+ 'Your score : ' + score + '!';
+			rslt2.innerHTML= nameDisplay + ': ' + 'More Practice! '+ 'Your score : ' + score + '!';
 		}
 		else if(score > 5){
-			rslt2.innerHTML= nameDisplay + ': ' + 'Kickass! '+'Your score : ' + score + '!';
+			rslt2.innerHTML= nameDisplay + ': ' + 'You Kick Grimsy Butt! '+'Your score : ' + score + '!';
 		}	
 	}
 
