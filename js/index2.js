@@ -16,8 +16,14 @@
 	var stop = document.getElementById('stopGame');
 	stop.addEventListener('click', stopGame);
 
+	var vid = document.getElementById("myVideo");
+	vid.addEventListener('click', playMusicSound);	
+
 	var getShotSound = document.getElementById('shotgunAudio');
 	getShotSound.addEventListener('click', playSound);
+
+	var vid = document.getElementById("myVideo");
+	vid.addEventListener('click', playMusicSound)
 
 	var getKittySound= document.getElementById('kittyAudio');
 	getKittySound.addEventListener('click', playKittySound);
@@ -37,7 +43,10 @@
 	var timerTime = 15000;
 
 
-
+ function playMusicSound() {
+ 
+          vid.play();
+      }
  function playSound() {
  
           getShotSound.play();
@@ -74,7 +83,9 @@ function playBombSound() {
 	}
 
 	function stopMusicPl(){
-
+		
+		vid.muted = true;
+		
 		var vid2 = document.getElementById("myVideo2");
 		vid2.muted = true;
 
@@ -90,6 +101,7 @@ function playBombSound() {
 		score = 0;
 		peep();
 		peep2();
+		playMusicSound();
 		countdown();
 		playSound();
 		setTimeout(() => timeup = true, timerTime);
