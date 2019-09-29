@@ -1,139 +1,197 @@
+
 	
-		
-		const bushes = document.querySelectorAll('.bush');
-		const scoreBoard = document.querySelector('.score');
-		const finished = document.querySelector('.final');
-		const grims = document.querySelectorAll('.grim');
-		const kittys = document.querySelectorAll('.kitty');
-		
-		var vidMut = document.getElementById("stopMusic");
-		vidMut.addEventListener('click', stopMusicPl);
-  		var vidMut = document.getElementById("stopMusic1");
-		vidMut.addEventListener('click', stopMusicPl);
+	var bushes = document.querySelectorAll('.bush');
+	var scoreBoard = document.querySelector('.score');
+	var finished = document.querySelector('.final');
+	var grims = document.querySelectorAll('.grim');
+	var kittys = document.querySelectorAll('.kitty');
+	
+	var vidMut = document.getElementById("stopMusic");
+	vidMut.addEventListener('click', stopMusicPl);
+	var vidMut = document.getElementById("stopMusic1");
+	vidMut.addEventListener('click', stopMusicPl);
 
-  		var start = document.getElementById('startGame');
-  		start.addEventListener('click', startGame);
-  		
-  		var stop = document.getElementById('stopGame');
-  		stop.addEventListener('click', stopGame);
+	var start = document.getElementById('startGame');
+	start.addEventListener('click', startGame);	
+	var stop = document.getElementById('stopGame');
+	stop.addEventListener('click', stopGame);
+
+	var vid = document.getElementById("myVideo");
+	vid.addEventListener('click', playMusicSound);	
+
+	var getShotSound = document.getElementById('shotgunAudio');
+	getShotSound.addEventListener('click', playSound);
+
+	var vid = document.getElementById("myVideo");
+	vid.addEventListener('click', playMusicSound)
+
+	var getKittySound= document.getElementById('kittyAudio');
+	getKittySound.addEventListener('click', playKittySound);
+
+	var getDemonSound = document.getElementById('demonAudio');
+	getDemonSound.addEventListener('click', playDemonSound);
+
+	var getScreamSound = document.getElementById('screamAudio');
+	getScreamSound.addEventListener('click', playScreamSound);
+
+	var getBombSound = document.getElementById('tickingTimeBombAudio');
+	getBombSound.addEventListener('click', playBombSound);
+
+	var lastBush;
+	var timeup = false;
+	var score = 0;
+	var timerTime = 15000;
 
 
-		let lastBush;
-		let timeup = false;
-		let score = 0;
+ function playMusicSound() {
+ 
+          vid.play();
+      }
+ function playSound() {
+ 
+          getShotSound.play();
+      }
+ function playKittySound() {
+ 
+          getKittySound.play();
+      }
+ function playDemonSound() {
+ 
+          getDemonSound.play();
+      }
+ function playScreamSound() {
+ 
+          getScreamSound.play();
+      }
+function playBombSound() {
+ 
+          getBombSound.play();
+      }
 
+	function randomTime(min, max) {
+		return Math.round(Math.random() * (max - min) + min);
+	} 
 
-		function randomTime(min, max) {
-			return Math.round(Math.random() * (max - min) + min);
-		} 
-
-		function randomBush(bushes){
-			const idx = Math.floor(Math.random() * bushes.length);
-
-			const bush = bushes[idx];
-		
-			if(bush === lastBush){
-				return randomHole(bushes);
-			}
+	function randomBush(bushes){
+		var idx = Math.floor(Math.random() * bushes.length);
+		var bush = bushes[idx];
+		if(bush === lastBush){
+			return randomHole(bushes);
+		}
 			lastHBush = bush;
 			return bush;
-		}
+	}
 
-		function stopMusicPl(){
-			var vid = document.getElementById("myVideo");
-			vid.muted = true;
-
-			var vid2 = document.getElementById("myVideo2");
-			vid2.muted = true;
-		}
+	function stopMusicPl(){
 		
-     
-		function startGame(){
-			scoreBoard.textContent = 0;
-			timeup = false;
-			score = 0;
+		vid.muted = true;
+		
+		var vid2 = document.getElementById("myVideo2");
+		vid2.muted = true;
+
+		var vid3 = document.getElementById("myVideo3");
+		vid3.muted = true;
+
+		playSound();
+	}
+	
+	function startGame(){
+		scoreBoard.textContent = 0;
+		timeup = false;
+		score = 0;
+		peep();
+		peep2();
+		playMusicSound();
+		countdown();
+		playSound();
+		setTimeout(() => timeup = true, timerTime);
+		if(score != 0){
+			startGame();
+		}
+	}
+
+	function countdown() {
+		var seconds = document.getElementById('countdown').innerHTML;
+		seconds = parseInt(seconds, 10);
+
+	if (seconds < 0) {
+  		var temp = document.getElementById('countdown');
+  		temp.innerHTML = "all done, bye bye"; 
+  		temp.innerHTML = 16;      	
+  		return;
+	}
+	seconds--;
+		temp = document.getElementById('countdown');
+		temp.innerHTML = seconds;
+		setTimeout(countdown, 1000);
+		} 
+
+	function stopGame(){
+		timeup = true;
+		playSound();
+	}
+
+	function peep(){
+		var time = randomTime(20, 1400);
+		var bush = randomBush(bushes); 
+		bush.classList.add('up');
+		setTimeout(() => {
+			bush.classList.remove('up');
+			if(!timeup){ 
 			peep();
-			peep2();	
-			setTimeout(() => timeup = true, 10000);
-			if(score != 0){
-				startGame();
 			}
-			
-		}
+			else{
+				nameScore();
+			}
+		}, time);
+	}
 
+	function peep2(){
+		var time = randomTime(20, 2000);
+		var bush = randomBush(bushes); 
+		bush.classList.add('up2');
+		setTimeout(() => {
+			bush.classList.remove('up2');
+			if(!timeup) {
+				peep2();
+			}
+		}, time);
+	}
 
-		function stopGame(){
-			timeup = true;
-		}
+	function hit(e){
+		if(!e.isTrusted) 
+			return;
+		score++;
+		scoreBoard.textContent = score;
+		playSound();
+		playScreamSound();
+		playDemonSound();
 
-		function peep(){
-			
-			const time = randomTime(20, 1000);
-			var bush = randomBush(bushes); 
+	}
+	grims.forEach(grim => grim.addEventListener('click', hit));	
+ 
+	function hit2(e){
+		if(!e.isTrusted) return;
+		score--;
+		scoreBoard.textContent = score;
+		playSound();
+		playKittySound();
+	}
+	kittys.forEach(kitty => kitty.addEventListener('click', hit2));
 
-			bush.classList.add('up');
-
-			setTimeout(() => {
-				bush.classList.remove('up');
-
-				console.log(time);
-				if(!timeup){ 
-				peep();
-				}
-				else{
-					nameScore();
-				}
-			}, time);
-		}
-
-			function peep2(){
-			
-			const time = randomTime(20, 2000);
-			var bush = randomBush(bushes); 
-			bush.classList.add('up2');
-
-			setTimeout(() => {
-				bush.classList.remove('up2');
-
-				console.log(this);
-				if(!timeup) peep2();
-			}, time);
-		}
-
-		function hit(e){
-			if(!e.isTrusted) 
-				return;
-			score++;
-			scoreBoard.textContent = score;
-		}
-
-		grims.forEach(grim => grim.addEventListener('click', hit));
-
-		function hit2(e){
-			if(!e.isTrusted) return;
-			score--;
-			scoreBoard.textContent = score;
-		}
-
-		kittys.forEach(kitty => kitty.addEventListener('click', hit2));
-
-
-
-		function nameScore(){
-			
+	function nameScore(){	
 		switchVisibleHeading();
 
-		if(score <= 0){
-			rslt2.innerHTML= nameDisplay + ': ' + 'Do you like kitties? ' + 'Your score : ' + score + '!';
+		if(score < 0){
+			rslt2.innerHTML= nameDisplay + ': ' + 'Oh no the Innocent kittys ' + 'Your score : ' + score + '!';
 		}
-		else if(score > 0 && score <= 3){
-			rslt2.innerHTML= nameDisplay + ': ' + 'No no you still have to practice! '+ 'Your score : ' + score + '!';
+		else if(score > 0 && score <= 5){
+			rslt2.innerHTML= nameDisplay + ': ' + 'More Practice! '+ 'Your score : ' + score + '!';
 		}
-		else if(score > 3){
-			rslt2.innerHTML= nameDisplay + ': ' + 'You are mastering the martial art! '+'Your score : ' + score + '!';
-		}
-			
-		}
+		else if(score > 5){
+			rslt2.innerHTML= nameDisplay + ': ' + 'You Kick Grimsy Butt! '+'Your score : ' + score + '!';
+		}	
+	}
 
 
 

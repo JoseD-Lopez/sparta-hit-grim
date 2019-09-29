@@ -2,44 +2,48 @@
 <html>
 <head>
 	<title>Spartan Hit Grim!</title>
+	<link rel="icon" href="media/ghost2.png">
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Indie+Flower|Josefin+Slab|Open+Sans+Condensed:300|Oswald" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/index2.css">
+
 </head>
 <body>
    <div id="initpage">	
    	<h1 id="results"></h1>
 	<h1>Spartan Hit the Grim!</h1>
-   	<div class="gameboard1">
-   
+   <div class="gameboard1">
 
 	<div class="name-input">  
 		<form autocomplete="off" name="matchform" class="wordform">
-         <input type="text" id="inputname" name="name">
-		<input id="sub-buttn" type="submit" name="Submit">
-     </form>
-		 <p class="penetername">Enter ur name so the grim knows who you are..:</p>
+         	<input type="text" id="inputname" name="name">
+			<input id="sub-buttn" type="submit" name="Submit">
+     	</form>
+		 <p id="penetername">Enter ur name so the grim knows who you are...</p>
+		 <p id="instructions">The aim is to click on the Grim while he is visible! There are two characters to watch out for... Your aming to hit as many Grim Reapers as you can BUT you have to watchout for the innocent Kittys.
+	   A visible scoreboard will keep track of the amount of clicks that you have effectively hit and a timer will tell you how much time you have left. Good Luck!</p>
      </div>
-</div>
-     <div id="gamepanel-one">
-      
+   </div>
+   <div id="gamepanel-one">
      <button id="Button1">Enter to Play</button>
+     <button id="instructToggle">Instructions Toggle</button>
      <button id="stopMusic1">Mute Music</button>
-    </div>
+   </div>
 	</div>
 
-		<div id="gamecontainer">
-			<h2 id="results2"></h2>
-		  <h1 id="heading">Bash Grim!</h1>
-	  <div class="gameboard">
-	  <div class="headscore">
-	  	  
-		  <h1 id="headingResult"></h1>
-	    <div class="score"></div>  
+	<div id="gamecontainer">
+		  <h2 id="results2"></h2>
+		  <h1 id="heading">Bash the Grim!</h1>
+		  <h1 id="countdown">16</h1> 
+	<div class="gameboard">
+	<div class="headscore">  
+	  <h1 id="headingResult"></h1>
+	    <div class="score"></div> 
 	</div>
 
 	<div class="game">
+
 		<div class="bush">
 			<div class="grim"></div>
 			<div class="kitty"></div>
@@ -72,21 +76,34 @@
 	<button id="stopMusic">Mute Music</button>
 	<button id="Button2">Back to Entry</button>
 	</div>
-</div>
+   </div>
+	<video id="myVideo">
+	  	<source src="media/gamesound.mp4" type="video/mp4" />
+	</video>
+	<video id="myVideo2" autoplay loop>
+	  	<source src="media/scaryvoice.mp4" type="video/mp4" />
+	</video>
+	<audio id="myVideo3" autoplay loop>
+		<source src="media/Hearbeat.mp3" type="">
+	</audio>
+	<audio id="shotgunAudio">
+		<source src="media/shotgun.mp3" type="">
+	</audio>
+	<audio id="kittyAudio">
+		<source src="media/TomCat.mp3" type="">
+	</audio>
+	<audio id="demonAudio">
+		<source src="media/demonYourSoul.mp3" type="">
+	</audio>
+	<audio id="screamAudio">
+		<source src="media/scream.mp3" type="">
+	</audio>
+	<audio id="tickingTimeBombAudio">
+		<source src="media/tickingBomb.mp3" type="">
+	</audio>
 
-<video id="myVideo" autoplay loop>
-  <source src="media/udon.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-<video id="myVideo2" autoplay loop>
-  <source src="media/scaryvoice.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
-
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/index2.js"></script>
-		
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>	
 	</script>
 </body>
 </html>
